@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1>{{ equipe }}</h1>
+
+<h2>Joueurs ({{ equipe.joueurs.count }})</h2>
+
+<ul>
+{% for j in equipe.joueurs.all %}
+    <li><a href="{% url joueur j.id %}">{{ j }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
